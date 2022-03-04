@@ -7,11 +7,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'scripts/main.js' %}" defer></script>
     <title>Heroes</title>
 </head>
 <body>
     <h1> A Hompage For A Hero </h1>
     <ul id= 'hero-display' ></ul>
-</body>
+
+    <div class ="box">
+        <p>Hero</p>
+        <form id='hero-form' method="POST" enctype="multipart/form-data"> 
+
+            {% csrf_token %} 
+            {{ her_form.as_p }}
+            <button type="submit">save </button>
+        </form> 
+    </div> 
+    <ul id = "hero-display"></ul>    
+</body>    
+
+
+
 </html>

@@ -16,8 +16,23 @@ const csrftoken = getCookie('csrftoken');
 
 let URL = 'api/heroes/' 
 
+
+
+
+    heroFormData.addEventListner('submit', function (event){
+    event.preventDefault
+
+    })
+function addList(url){   
+    let heroFormData = new FormData(HeroForm)
+    
+    console.log(heroFormData)
+
+
+
+
 fetch(URL, {
-    method: 'GET',
+    method: 'POST',
     credentials: 'same-origin',
     headers: {
         'Accept': 'application/json',
@@ -26,9 +41,20 @@ fetch(URL, {
     },
     
 })
-.then(response => {
-    return response.json();
-})
+
+    body: heroFormData
+
+    .then(response => {
+        return response.json();
+    })
+
+    .then[response => { 
+    console.log(data)
+}]
+heroItem.innerText = `Name: ${hero.name} | Alias: ${hero.alias}`
+        heroItem.classList.add()
+        heroDisplay.appendChild(heroItem)
+
 .then(heroArray => {
     console.log(heroArray)
     let heroDisplay = document.querySelector('#hero-display')
@@ -36,11 +62,14 @@ fetch(URL, {
     for (let hero of heroArray){
         console.log(hero)
         let heroItem = document.createElement('li')
-        heroItem.innerText = `Name: ${hero.name} | Alias: ${hero.alias}`
-        heroDisplay.appendChild(heroItem)
+        
     }
-
 })        
+
+} 
+
+
+addList(heroURL)
 
 
     
